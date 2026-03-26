@@ -1,4 +1,4 @@
-module github.com/raaaaaaaay64/nosrueidis
+module github.com/raaaaaaaay86/nosrueidis
 
 go 1.25.0
 
