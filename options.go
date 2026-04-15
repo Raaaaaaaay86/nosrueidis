@@ -7,7 +7,6 @@ import (
 	"github.com/redis/rueidis"
 )
 
-
 type ExecutionOption func(options *ExecutionConfig) error
 
 func WithClientSideTtl(d time.Duration) ExecutionOption {
