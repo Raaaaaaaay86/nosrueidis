@@ -1,6 +1,10 @@
 package nosrueidis
 
-import "time"
+import (
+	"time"
+
+	"go.opentelemetry.io/otel/trace"
+)
 
 type RueidisConfig struct {
 	Endpoints        []string
@@ -8,4 +12,5 @@ type RueidisConfig struct {
 	Password         string
 	SelectDB         int
 	ExecutionTimeout time.Duration
+	TracerProvider   trace.TracerProvider
 }

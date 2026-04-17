@@ -6,6 +6,7 @@ import (
 
 	"github.com/redis/rueidis"
 	"github.com/redis/rueidis/rueidislock"
+	"github.com/redis/rueidis/rueidisotel"
 	"golang.org/x/xerrors"
 )
 
@@ -34,13 +35,14 @@ func NewRueidisClient(c RueidisConfig) (*RueidisClient, error) {
 
 	v.executionTimeout = c.ExecutionTimeout
 
-	client, err := rueidis.NewClient(rueidis.ClientOption{
+	option := rueidis.ClientOption{
 		InitAddress: c.Endpoints,
 		Username:    c.User,
 		Password:    c.Password,
 		SelectDB:    c.SelectDB,
 		ShuffleInit: true,
-	})
+	}
+	client, err := newClient(option, c.TracerProvider != nil)
 	if err != nil {
 		return nil, err
 	} else {
@@ -64,6 +66,14 @@ func NewRueidisClient(c RueidisConfig) (*RueidisClient, error) {
 	}
 
 	return &v, nil
+}
+
+func newClient(option rueidis.ClientOption, useOtel bool) (rueidis.Client, error) {
+	if !useOtel {
+		return rueidis.NewClient(option)
+	}
+
+	return rueidisotel.NewClient(option)
 }
 
 func (r *RueidisClient) GetClient() rueidis.Client {
