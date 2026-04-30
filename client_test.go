@@ -6,6 +6,8 @@ import (
 	"testing"
 	"time"
 
+	"github.com/go-logr/logr/funcr"
+	"github.com/redis/rueidis"
 	"github.com/stretchr/testify/suite"
 )
 
