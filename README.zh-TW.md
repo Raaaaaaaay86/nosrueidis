@@ -1,6 +1,12 @@
-# nosrueidis
+<h1 align="center"> nosrueidis </h1>
 
-`nosrueidis` 將 [rueidis](https://github.com/redis/rueidis) 與 [rueidislock](https://github.com/redis/rueidis/tree/main/rueidislock) 整合進單一的 `RueidisClient` struct。提供帶有逾時限制的 `Session` 輔助函式、具表達力的 `Execute` / `ExecuteCacheable` 方法（支援 client-side cache 與 debug logging），以及分散式鎖的 `DistributedLocker` 介面。
+<p>
+nosrueidis 將 <a href="https://github.com/redis/rueidis">rueidis</a> 與 <a href="https://github.com/redis/rueidis/tree/main/rueidislock">rueidislock</a> 整合進單一的 RueidisClient struct。提供帶有逾時限制的 Session 輔助函式、具表達力的 Execute / ExecuteCacheable 方法（支援 client-side cache 與 debug logging），以及分散式鎖的 DistributedLocker 介面。
+</p>
+
+<p align="center">
+  <a href="README.md">English</a>
+</p>
 
 ## 安裝
 

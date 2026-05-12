@@ -1,8 +1,14 @@
-# nosrueidis
+<h1 align="center"> nosrueidis </h1>
 
-`nosrueidis` wraps [rueidis](https://github.com/redis/rueidis) and [rueidislock](https://github.com/redis/rueidis/tree/main/rueidislock) into a single `RueidisClient` struct. It provides a `Session` helper for timeout-bounded execution, expressive `Execute` / `ExecuteCacheable` methods with optional client-side caching and debug logging, and a `DistributedLocker` interface for distributed locks.
+<p>
+nosrueidis wraps <a href="https://github.com/redis/rueidis">rueidis</a> and <a href="https://github.com/redis/rueidis/tree/main/rueidislock">rueidislock</a> into a single RueidisClient struct. It provides a Session helper for timeout-bounded execution, expressive Execute / ExecuteCacheable methods with optional client-side caching and debug logging, and a DistributedLocker interface for distributed locks.
+</p>
 
-## Installation
+<p align="center">
+  <a href="README.zh-TW.md">中文</a>
+</p>
+
+## Install
 
 ```bash
 go get github.com/raaaaaaaay86/nosrueidis
